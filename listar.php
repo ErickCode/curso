@@ -12,7 +12,7 @@
 		}
 		echo json_encode($arreglo);
 	}
-	mysqli_free_results($resultado);
+	mysqli_free_result($resultado);
 	mysqli_close($conexion);
-
+?>
 	

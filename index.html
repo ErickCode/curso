@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Código Wolf</title>
+	<title>DATA TABLE</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
@@ -114,10 +114,21 @@
 
 	<script>		
 		$(document).on("ready", function(){
-			
+			listar();
 		});
-
-		
+		var listar = function(){
+			var table = $("#dt_cliente") .DataTable({
+				"ajax":{
+					"method":"POST",
+					"url": "listar.php"
+				},
+				"columns":[
+				{"data" : "nombre"}	,
+				{"data" : "apellidos"}	,	
+				{"data" : "dni"}
+				]				
+			});
+		}
 		
 
 	</script>
